@@ -1,5 +1,5 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,31 +7,31 @@
 
 @layer base {
   /**
-   * Connectify design colors - Light mode with blue accents
+   * BudgetTrip Explorer colors - Light mode with blue and green accents
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
    */
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 9% 23%;
+    --foreground: 210 14% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 9% 23%;
+    --card-foreground: 210 14% 20%;
 
-    --primary: 213 94% 68%;
+    --primary: 217 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 210 9% 23%;
+    --secondary: 160 100% 40%;
+    --secondary-foreground: 0 0% 100%;
 
-    --accent: 213 94% 68%;
+    --accent: 160 84% 39%;
     --accent-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 210 8% 50%;
+    --muted: 210 14% 90%;
+    --muted-foreground: 210 14% 50%;
 
-    --border: 210 14% 89%;
+    --border: 210 14% 88%;
     --input: 210 14% 97%;
-    --ring: 213 94% 68%;
+    --ring: 217 100% 50%;
   }
 }
 
@@ -42,10 +42,15 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
-  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+  }
+
+  :where(p, span, li, a, button, label, td, th) {
     overflow-wrap: anywhere;
     word-break: break-word;
   }
@@ -54,5 +59,10 @@
   code {
     overflow-x: auto;
     white-space: pre;
+    font-family: "Inter", monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
